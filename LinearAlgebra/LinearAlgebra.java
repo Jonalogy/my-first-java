@@ -1,23 +1,22 @@
-import MatrixUtils.Matrix;
 import java.util.Scanner;
 
-public class LinearAlgebra {
+import Helpers.Base;
+import MatrixUtils.Matrix;
+
+public class LinearAlgebra extends Base {
   public static void main (String[] args) {
+    Scanner scanner = new Scanner(System.in);
     Matrix[] matrices = new Matrix[2];
 
-    System.out.println("--- Matrix ---");
-    System.out.println("Creating 1st Matrix");
-
-    matrices[0] = new Matrix();
-    echo("> " + matrices[0].val[1][1]);
-
-    System.out.println("Creating 2nd Matrix");
-    matrices[1] = new Matrix();
-    echo("> " + matrices[1].val[1][1]);
-
+    echo("--- Matrix ---");
+    for(int i=0 ; i<matrices.length ; i++){
+      echo("Creating Matrix-"+ (i+1));
+      matrices[i] = initMatrix(scanner);
+    }
   }
 
-  public static void echo (String txt) {
-    System.out.println(txt);
+  public static Matrix initMatrix (Scanner scanner) {
+    int dimCount [] = dimensionInit(scanner);
+    return new Matrix(dimCount[0], dimCount[1]);
   }
 }

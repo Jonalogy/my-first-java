@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - CalculateArrayAverage",
+      "request": "launch",
+      "mainClass": "CalculateArrayAverage"
+    }
+  ]
+}
